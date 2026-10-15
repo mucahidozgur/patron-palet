@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════
+   PATRON PALET — Konsept B: Dynamic Showcase
+   Flux Pixel estetiği: yüksek kontrast, cesur tipografi
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Tasarım tokenları ───────────────────────────────── */
+@theme {
+  --color-void: #000000;
+  --color-pure: #ffffff;
+  --color-electric: #ff3d00;
+  --color-electric-deep: #d32f00; /* beyaz zemin üzerinde AA kontrast (4.5:1+) */
+  --color-cyan: #00e5ff;
+  --color-ash: #1a1a1a;
+  --color-smoke: #888888;
+
+  --font-display: var(--font-space), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 25s linear infinite;
+  --animate-pulse-glow: pulseGlow 3s ease-in-out infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes marquee-reverse {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+/* ── Temel ───────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* Global grain dokusu — tek data-URI, sıfır istek.
+   %23 = #, %25 = %, %3C = < (SVG encode) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch' color-interpolation-filters='sRGB'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: #ff3d00;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff3d00;
+}
+
+/* Focus görünürlüğü (WCAG 2.4.7) */
+:focus-visible {
+  outline: 2px solid #ff3d00;
+  outline-offset: 3px;
+}
+
+/* Sabit header altında çapa konumları */
+[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* ── Bileşen sınıfları (utilities bunları ezebilir) ───── */
+@layer components {
+  .container-industrial {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .container-industrial {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-industrial {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
+
+  .heading-display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+
+  .label-tech {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #ff3d00;
+  }
+
+  /* Beyaz zemin bölümleri için AA kontrastlı etiket */
+  .label-tech-dark {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #d32f00;
+  }
+
+  /* Dış hatlı dev tipografi — paint-order, stroke'un
+     glyph'i yemesini engeller */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.35);
+    paint-order: stroke fill;
+  }
+
+  .text-outline-dark {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.25);
+    paint-order: stroke fill;
+  }
+}
+
+/* ── Hareket azaltma (prefers-reduced-motion) ─────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-pulse-glow {
+    animation: none !important;
+  }
+}
