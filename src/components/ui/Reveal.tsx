@@ -21,6 +21,8 @@ interface RevealProps {
   delay?: number;
   duration?: number;
   once?: boolean;
+  /** Dış tetikleyici (örn. açılış intro'su) — verildiğinde whileInView yerine animate kullanılır */
+  ready?: boolean;
 }
 
 /**
@@ -36,14 +38,32 @@ export default function Reveal({
   delay = 0,
   duration = 0.7,
   once = true,
+  ready,
 }: RevealProps) {
+  const initial = { opacity: 0, ...OFFSETS[direction] };
+  const transition = { duration, delay, ease: EASE_EXPO };
+
+  // Dış tetikleyici modu: intro gibi olaylar bitene kadar gizli kalır
+  if (ready !== undefined) {
+    return (
+      <m.div
+        className={className}
+        initial={initial}
+        animate={ready ? { opacity: 1, x: 0, y: 0 } : initial}
+        transition={transition}
+      >
+        {children}
+      </m.div>
+    );
+  }
+
   return (
     <m.div
       className={className}
-      initial={{ opacity: 0, ...OFFSETS[direction] }}
+      initial={initial}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={once ? VIEWPORT_ONCE : { margin: "-80px" }}
-      transition={{ duration, delay, ease: EASE_EXPO }}
+      transition={transition}
     >
       {children}
     </m.div>

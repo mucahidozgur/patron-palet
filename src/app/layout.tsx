@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Inter, Space_Grotesk } from "next/font/google";
 import Providers from "@/components/Providers";
+import IntroGate from "@/components/layout/Intro";
 import "./globals.css";
 
 const space = Space_Grotesk({
@@ -25,9 +26,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Patron Palet — Endüstriyel Ahşap Çözümleri",
+  title: "TR Patron Palet — Endüstriyel Ahşap Çözümleri",
   description:
-    "Dayanıklı, sürdürülebilir ve standartlara uygun ahşap palet üretimi.",
+    "Sıfır ahşap palet üretimi, ikinci el palet alım satımı ve ihracat sandığı imalatı. Ankara'dan tüm Türkiye'ye zamanında teslim.",
 };
 
 export default function RootLayout({
@@ -39,7 +40,9 @@ export default function RootLayout({
       className={`${space.variable} ${inter.variable} ${jetbrains.variable}`}
     >
       <body className="bg-void font-sans text-pure antialiased">
-        <Providers>{children}</Providers>
+        <Providers>
+          <IntroGate>{children}</IntroGate>
+        </Providers>
       </body>
     </html>
   );

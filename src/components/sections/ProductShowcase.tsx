@@ -147,6 +147,36 @@ export default function ProductShowcase() {
             </a>
           </Reveal>
         </div>
+
+        {/* Saha levhası — çerçeveli, geniş fotoğraf */}
+        <Reveal className="mt-16 md:mt-24">
+          <figure className="group relative overflow-hidden border border-void/10">
+            <div className="relative aspect-[16/7] md:aspect-[21/8]">
+              <Image
+                src="/images/site/saha-2.jpg"
+                alt=""
+                fill
+                sizes="100vw"
+                className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-void/70 via-void/10 to-transparent"
+              />
+              <span className="absolute left-5 top-5 font-mono text-xs text-white/70">
+                FIG. 01 — SAHA
+              </span>
+              <figcaption className="absolute inset-x-5 bottom-5 flex flex-wrap items-end justify-between gap-4">
+                <span className="font-display text-lg font-bold uppercase tracking-tight text-pure md:text-2xl">
+                  Stok Sahası — Ankara
+                </span>
+                <span className="font-mono text-[0.65rem] tracking-[0.2em] text-white/70">
+                  39.85° N — 32.64° E
+                </span>
+              </figcaption>
+            </div>
+          </figure>
+        </Reveal>
       </div>
 
       <AnimatePresence>

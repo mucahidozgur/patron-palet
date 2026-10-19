@@ -22,14 +22,19 @@ export default function Footer() {
               <span className="flex h-12 w-12 items-center justify-center border border-pure/15 bg-ash/50 p-2 transition-colors duration-300 group-hover:border-electric/60">
                 <Image
                   src="/logopatron-alpha.png"
-                  alt="Patron Palet"
+                  alt="TR Patron Palet"
                   width={48}
                   height={48}
                   className="h-full w-full object-contain"
                 />
               </span>
-              <span className="font-display text-base font-bold tracking-[0.3em]">
-                PATRON PALET
+              <span className="flex items-center gap-2">
+                <span className="border border-electric/70 bg-electric/10 px-2 py-1 font-display text-xs font-bold tracking-[0.25em] text-electric">
+                  TR
+                </span>
+                <span className="font-display text-base font-bold tracking-[0.3em]">
+                  PATRON PALET
+                </span>
               </span>
             </a>
             <p className="mt-6 max-w-xs text-base leading-relaxed text-smoke">

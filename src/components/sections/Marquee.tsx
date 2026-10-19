@@ -62,14 +62,17 @@ function Track({ items, reverse = false, outlined = false }: TrackProps) {
 
 export default function Marquee() {
   return (
-    <section aria-label="Ürün yelpazesi" className="relative overflow-hidden">
-      {/* Ana şerit — electric zemin */}
-      <div className="group overflow-hidden bg-electric py-4 text-void [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
-        <Track items={ITEMS} />
-      </div>
-      {/* Ters şerit — dış hatlı tipografi */}
-      <div className="group overflow-hidden border-y border-pure/10 bg-void py-3 [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
-        <Track items={ITEMS_ALT} reverse outlined />
+    <section aria-label="Ürün yelpazesi" className="relative overflow-hidden py-6">
+      {/* Hafif eğik bant — sayfaya enerji katan diyagonal */}
+      <div className="-rotate-2 scale-[1.05]">
+        {/* Ana şerit — electric zemin */}
+        <div className="group overflow-hidden bg-electric py-4 text-void [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
+          <Track items={ITEMS} />
+        </div>
+        {/* Ters şerit — dış hatlı tipografi */}
+        <div className="group overflow-hidden border-y border-pure/10 bg-void py-3 [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
+          <Track items={ITEMS_ALT} reverse outlined />
+        </div>
       </div>
     </section>
   );

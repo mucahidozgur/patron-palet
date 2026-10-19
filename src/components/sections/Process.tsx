@@ -2,6 +2,7 @@
 
 import * as m from "motion/react-m";
 import { useReducedMotion, useScroll, useTransform } from "motion/react";
+import Image from "next/image";
 import { useRef } from "react";
 import Reveal from "@/components/ui/Reveal";
 
@@ -24,6 +25,8 @@ export default function Process() {
   const watermarkY = useTransform(scrollYProgress, [0, 1], [80, -80]);
   // Grid üzerindeki electric ilerleme çizgisi
   const lineScaleX = useTransform(scrollYProgress, [0.1, 0.6], [0, 1]);
+  // Saha bandı, scroll ile ters yönde süzülür
+  const bandY = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
     <section
@@ -84,6 +87,37 @@ export default function Process() {
               />
             </Reveal>
           ))}
+        </div>
+      </div>
+
+      {/* Saha bandı — tam genişlik, paralaks fotoğraf */}
+      <div className="relative mt-24 h-[46vh] min-h-[340px] overflow-hidden md:mt-32">
+        <m.div
+          aria-hidden
+          style={reduce ? undefined : { y: bandY }}
+          className="absolute inset-x-0 -inset-y-[15%]"
+        >
+          <Image
+            src="/images/site/saha-1.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </m.div>
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-r from-void via-void/25 to-transparent"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-t from-void/70 via-transparent to-transparent"
+        />
+        <div className="container-industrial absolute inset-0 flex flex-col justify-end pb-10">
+          <p className="label-tech">SAHA — ISPM 15 ISIL İŞLEM</p>
+          <p className="heading-display mt-3 text-2xl md:text-4xl">
+            LİSANSLI ÜRETİM HATTI
+          </p>
         </div>
       </div>
     </section>

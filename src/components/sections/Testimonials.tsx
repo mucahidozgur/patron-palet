@@ -1,5 +1,9 @@
 "use client";
 
+import * as m from "motion/react-m";
+import { useReducedMotion, useScroll, useTransform } from "motion/react";
+import Image from "next/image";
+import { useRef } from "react";
 import Reveal from "@/components/ui/Reveal";
 
 const TESTIMONIALS = [
@@ -30,8 +34,22 @@ const TESTIMONIALS = [
 ];
 
 export default function Testimonials() {
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  // Saha bandı, scroll ile ters yönde süzülür
+  const bandY = useTransform(scrollYProgress, [0, 1], [40, -40]);
+
   return (
-    <section id="referanslar" className="relative overflow-hidden bg-void py-32">
+    <section
+      ref={ref}
+      id="referanslar"
+      className="relative overflow-hidden bg-void py-32"
+    >
       {/* Bölüm indeksi */}
       <span
         aria-hidden
@@ -55,9 +73,38 @@ export default function Testimonials() {
             lojistiğe uzanan sektörlerden güven mektupları.
           </p>
         </Reveal>
+      </div>
 
-        {/* 2x2 referans grid'i */}
-        <div className="mt-16 grid gap-px border border-pure/10 bg-pure/10 md:grid-cols-2">
+      {/* Saha bandı — tam genişlik, paralaks fotoğraf */}
+      <div className="relative mt-16 h-[40vh] min-h-[300px] overflow-hidden">
+        <m.div
+          aria-hidden
+          style={reduce ? undefined : { y: bandY }}
+          className="absolute inset-x-0 -inset-y-[15%]"
+        >
+          <Image
+            src="/images/site/saha-3.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </m.div>
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-t from-void via-void/10 to-void/80"
+        />
+        <div className="container-industrial absolute inset-0 flex flex-col justify-end pb-10">
+          <p className="label-tech">SEVKİYAT ÖNCESİ — %100 KALİTE KONTROL</p>
+          <p className="heading-display mt-3 text-2xl md:text-4xl">
+            HER PALET GÜVENLE YOLA ÇIKAR
+          </p>
+        </div>
+      </div>
+
+      {/* 2x2 referans grid'i */}
+      <div className="container-industrial relative mt-16">
+        <div className="grid gap-px border border-pure/10 bg-pure/10 md:grid-cols-2">
           {TESTIMONIALS.map((t, i) => (
             <Reveal
               key={t.name}

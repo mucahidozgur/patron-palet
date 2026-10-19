@@ -127,6 +127,22 @@ export default function About() {
                 className="absolute -right-3 -top-3 h-16 w-16 border-r-2 border-t-2 border-electric"
               />
             </div>
+            {/* Üst üste binen detay fotoğrafı — kolaj derinliği */}
+            <div className="absolute -bottom-10 -right-10 hidden w-52 overflow-hidden border border-pure/15 bg-void shadow-[0_24px_80px_rgba(0,0,0,0.6)] md:block lg:w-64">
+              <div className="relative aspect-[3/2]">
+                <Image
+                  src="/images/site/detay-1.jpg"
+                  alt=""
+                  fill
+                  sizes="320px"
+                  className="object-cover"
+                />
+                <div aria-hidden className="absolute inset-0 bg-void/20" />
+                <span className="absolute bottom-3 left-4 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-white/80">
+                  DETAY — 03
+                </span>
+              </div>
+            </div>
           </Reveal>
         </div>
       </div>

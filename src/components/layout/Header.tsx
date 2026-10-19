@@ -57,18 +57,23 @@ export default function Header() {
       >
         <div className="container-industrial flex h-20 items-center justify-between">
           {/* Logo — temaya uygun karolu kilit */}
-          <a href="#top" className="group flex items-center gap-3">
+          <a href="#top" id="brand-anchor" className="group flex items-center gap-3">
             <span className="flex h-10 w-10 items-center justify-center border border-pure/15 bg-ash/50 p-1.5 transition-colors duration-300 group-hover:border-electric/60">
               <Image
                 src="/logopatron-alpha.png"
-                alt="Patron Palet"
+                alt="TR Patron Palet"
                 width={40}
                 height={40}
                 className="h-full w-full object-contain"
               />
             </span>
-            <span className="hidden font-display text-sm font-bold tracking-[0.3em] text-pure sm:block">
-              PATRON PALET
+            <span className="flex items-center gap-2">
+              <span className="border border-electric/70 bg-electric/10 px-1.5 py-0.5 font-display text-[0.7rem] font-bold tracking-[0.25em] text-electric">
+                TR
+              </span>
+              <span className="hidden font-display text-sm font-bold tracking-[0.3em] text-pure sm:block">
+                PATRON PALET
+              </span>
             </span>
           </a>
 

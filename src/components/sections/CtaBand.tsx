@@ -1,13 +1,26 @@
 "use client";
 
+import Image from "next/image";
 import Magnetic from "@/components/ui/Magnetic";
 import Reveal from "@/components/ui/Reveal";
 
-/** Footer öncesi tam genişlik CTA bandı — electric zemin. */
+/** Footer öncesi tam genişlik CTA bandı — electric zemin üzerinde saha dokusu. */
 export default function CtaBand() {
   return (
     <section className="relative overflow-hidden bg-electric text-void">
-      <div className="container-industrial py-24 md:py-32">
+      {/* Saha fotoğrafı — electric zeminle çoğalır (multiply) */}
+      <div aria-hidden className="absolute inset-0">
+        <Image
+          src="/images/site/saha-4.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-60 mix-blend-multiply"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-electric/85 via-electric/40 to-electric/85" />
+      </div>
+
+      <div className="container-industrial relative py-24 md:py-32">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-void/70">
             TEKLİF — 24 SAAT İÇİNDE DÖNÜŞ
@@ -53,9 +66,9 @@ export default function CtaBand() {
       {/* Dev dış hatlı filigran — bandın imzası */}
       <span
         aria-hidden
-        className="heading-display pointer-events-none absolute -bottom-[4%] left-1/2 -translate-x-1/2 select-none whitespace-nowrap text-[13vw] leading-none text-void/10"
+        className="heading-display pointer-events-none absolute -bottom-[3%] left-1/2 -translate-x-1/2 select-none whitespace-nowrap text-[10vw] leading-none text-void/10"
       >
-        PATRON PALET
+        TR PATRON PALET
       </span>
     </section>
   );
