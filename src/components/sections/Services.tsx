@@ -40,10 +40,10 @@ export default function Services() {
           <p className="label-industrial mb-6">
             <span className="section-num mr-3">02</span>Hizmetlerimiz
           </p>
-          <h2 className="heading-display text-3xl text-white md:text-5xl">
+          <h2 className="heading-display text-3xl text-forest md:text-5xl">
             Tek Çatı Altında
           </h2>
-          <p className="mt-6 font-light leading-relaxed text-white/60">
+          <p className="mt-6 font-light leading-relaxed text-ivory/60">
             Üretimden alım satıma, ihracattan özel ölçüye — tüm ahşap palet
             ihtiyaçlarınız için tek adres.
           </p>
@@ -52,7 +52,7 @@ export default function Services() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map((service, index) => (
             <Reveal key={service.title} delay={index * 0.08}>
-              <article className="group h-full border border-white/10 bg-ink p-8 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.3)]">
+              <article className="group h-full border border-ivory/10 bg-ink p-8 transition-all duration-300 hover:-translate-y-1 hover:border-moss/40 hover:shadow-[0_14px_44px_-12px_rgba(123,200,159,0.3)]">
                 <div className="flex items-start justify-between">
                   <svg
                     viewBox="0 0 24 24"
@@ -61,19 +61,19 @@ export default function Services() {
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-10 w-10 text-tan drop-shadow-[0_0_10px_rgba(212,163,115,0.5)] transition-transform duration-300 group-hover:scale-110"
+                    className="h-10 w-10 text-moss drop-shadow-[0_0_10px_rgba(123,200,159,0.5)] transition-transform duration-300 group-hover:scale-110"
                     aria-hidden="true"
                   >
                     {service.icon}
                   </svg>
-                  <span className="font-mono text-xs text-white/25">
+                  <span className="font-mono text-xs text-ivory/25">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <h3 className="font-display mt-6 text-lg font-bold uppercase tracking-wide text-white">
+                <h3 className="font-display mt-6 text-lg font-bold uppercase tracking-wide text-ivory">
                   {service.title}
                 </h3>
-                <p className="mt-3 text-sm font-light leading-relaxed text-white/60">
+                <p className="mt-3 text-sm font-light leading-relaxed text-ivory/60">
                   {service.description}
                 </p>
               </article>

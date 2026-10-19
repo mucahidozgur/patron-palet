@@ -2,6 +2,7 @@ import BackToTop from "@/components/ui/BackToTop";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
+import Marquee from "@/components/sections/Marquee";
 import StatsBand from "@/components/sections/StatsBand";
 import ProductGrid from "@/components/sections/ProductGrid";
 import ShowcaseBand from "@/components/sections/ShowcaseBand";
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Marquee />
         <StatsBand />
         <ProductGrid />
         <ShowcaseBand />

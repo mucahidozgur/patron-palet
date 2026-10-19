@@ -39,7 +39,7 @@ export default function StatsBand() {
   return (
     <section
       aria-label="Öne çıkan rakamlar"
-      className="relative border-y border-white/5 bg-surface/40 py-16 md:py-20"
+      className="relative border-y border-ivory/5 bg-surface/40 py-16 md:py-20"
     >
       <div className="container-editorial">
         <div className="grid grid-cols-2 gap-y-12 lg:grid-cols-4">
@@ -47,13 +47,17 @@ export default function StatsBand() {
             <Reveal
               key={stat.label}
               delay={index * 0.1}
-              className={index > 0 ? "lg:border-l lg:border-white/10 lg:pl-10" : ""}
+              className={
+                index > 0
+                  ? "group lg:border-l lg:border-ivory/10 lg:pl-10"
+                  : "group"
+              }
             >
-              <p className="font-display text-4xl font-extrabold text-white drop-shadow-[0_0_24px_rgba(212,163,115,0.25)] md:text-5xl">
+              <p className="font-display text-4xl font-extrabold text-forest drop-shadow-[0_0_24px_rgba(123,200,159,0.25)] transition-transform duration-300 group-hover:scale-105 md:text-5xl">
                 <Counter to={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
               </p>
               <p className="label-industrial mt-3 text-sm">{stat.label}</p>
-              <p className="mt-2 text-sm font-light text-white/50">{stat.note}</p>
+              <p className="mt-2 text-sm font-light text-ivory/50">{stat.note}</p>
             </Reveal>
           ))}
         </div>

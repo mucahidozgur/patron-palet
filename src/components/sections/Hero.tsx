@@ -40,7 +40,7 @@ export default function Hero() {
   const spotlight = useTransform(
     [sx, sy],
     ([x, y]: number[]) =>
-      `radial-gradient(520px circle at ${x}px ${y}px, rgba(212,163,115,0.13), transparent 70%)`
+      `radial-gradient(520px circle at ${x}px ${y}px, rgba(123,200,159,0.13), transparent 70%)`
   );
 
   return (
@@ -82,6 +82,13 @@ export default function Hero() {
       <div className="tech-grid absolute inset-0 opacity-40" />
       <div className="grain absolute inset-0 opacity-[0.12] mix-blend-overlay" />
 
+      {/* İkinci ışık nabzı — sağ altta yosun parıltısı */}
+      <div
+        aria-hidden
+        className="glow-pulse pointer-events-none absolute -bottom-24 -right-24 h-[380px] w-[380px] rounded-full bg-forest/20 blur-[110px]"
+        style={{ animationDelay: "1.5s" }}
+      />
+
       {/* Fare spot ışığı */}
       {!reduce && (
         <m.div
@@ -96,7 +103,7 @@ export default function Hero() {
         variants={fade(1.2)}
         initial="hidden"
         animate={introDone ? "visible" : "hidden"}
-        className="absolute right-10 top-1/2 hidden -translate-y-1/2 font-mono text-[10px] uppercase tracking-[0.45em] text-white/35 [writing-mode:vertical-rl] lg:block"
+        className="absolute right-10 top-1/2 hidden -translate-y-1/2 font-mono text-[10px] uppercase tracking-[0.45em] text-ivory/35 [writing-mode:vertical-rl] lg:block"
         aria-hidden="true"
       >
         Ankara — TR · Est. MMXXVI
@@ -111,20 +118,28 @@ export default function Hero() {
         >
           <span className="tr-badge text-sm">TR</span>
           <p className="label-industrial">Ahşap Palet Üretimi — MMXXVI</p>
+          {/* Canlı durum rozeti */}
+          <span className="ml-2 inline-flex items-center gap-2 border border-moss/40 bg-ink/60 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-widest text-moss backdrop-blur-sm">
+            <span
+              aria-hidden
+              className="h-1.5 w-1.5 animate-pulse-soft rounded-full bg-moss"
+            />
+            Stokta — Anında Teslim
+          </span>
         </m.div>
 
         <m.h1
           variants={wordContainer}
           initial="hidden"
           animate={introDone ? "visible" : "hidden"}
-          className="heading-display text-4xl leading-[1.1] text-white md:text-6xl lg:text-7xl"
+          className="heading-display text-4xl leading-[1.1] text-forest md:text-6xl lg:text-7xl"
         >
           <m.span variants={wordFadeUp} className="inline-block">
             Patron
           </m.span>{" "}
           <m.span
             variants={wordFadeUp}
-            className="logo-shimmer inline-block bg-gradient-to-r from-tan to-caramel bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(212,163,115,0.4)]"
+            className="logo-shimmer inline-block bg-gradient-to-r from-tan to-moss bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(123,200,159,0.4)]"
           >
             Palet
           </m.span>
@@ -134,7 +149,7 @@ export default function Hero() {
           variants={fade(0.45)}
           initial="hidden"
           animate={introDone ? "visible" : "hidden"}
-          className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-white/85 md:text-xl"
+          className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-ivory/85 md:text-xl"
         >
           Sıfır ahşap palet üretimi, ikinci el palet alım satımı ve ihracat
           sandığı imalatı. En uygun, en doğru ve en ekonomik çözümler için tek
@@ -149,13 +164,13 @@ export default function Hero() {
         >
           <a
             href="#iletisim"
-            className="btn-sheen bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-caramel hover:shadow-[0_0_32px_rgba(212,163,115,0.5)]"
+            className="btn-sheen bg-ivory px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-moss hover:shadow-[0_0_32px_rgba(123,200,159,0.5)]"
           >
             Teklif Al <span className="ml-1">→</span>
           </a>
           <a
             href="#urunler"
-            className="link-sweep text-sm font-semibold uppercase tracking-widest2 text-white transition-colors duration-300 hover:text-tan"
+            className="link-sweep text-sm font-semibold uppercase tracking-widest2 text-ivory transition-colors duration-300 hover:text-moss"
           >
             Ürünleri İncele
           </a>
@@ -171,7 +186,7 @@ export default function Hero() {
           {CHIPS.map((chip) => (
             <span
               key={chip}
-              className="border border-white/15 bg-ink/55 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white/80 backdrop-blur-sm transition-colors duration-300 hover:border-tan hover:text-tan"
+              className="border border-ivory/15 bg-ink/55 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-ivory/80 backdrop-blur-sm transition-colors duration-300 hover:border-moss hover:text-moss"
             >
               {chip}
             </span>
@@ -187,11 +202,11 @@ export default function Hero() {
           animate={introDone ? "visible" : "hidden"}
           className="flex flex-col items-center gap-3"
         >
-          <span className="font-mono text-[9px] uppercase tracking-[0.4em] text-white/40">
+          <span className="font-mono text-[9px] uppercase tracking-[0.4em] text-ivory/40">
             Kaydır
           </span>
-          <span className="flex h-10 w-6 items-start justify-center rounded-full border border-tan/40 p-1.5">
-            <span className="scroll-dot h-1.5 w-1.5 rounded-full bg-tan" />
+          <span className="flex h-10 w-6 items-start justify-center rounded-full border border-moss/40 p-1.5">
+            <span className="scroll-dot h-1.5 w-1.5 rounded-full bg-moss" />
           </span>
         </m.div>
       </div>

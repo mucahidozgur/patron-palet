@@ -24,7 +24,7 @@ export default function FramedImage({
   src,
   alt,
   caption,
-  className = "border-white/10",
+  className = "border-ivory/10",
   priority = false,
   sizes = "(min-width: 1024px) 50vw, 100vw",
   position,
@@ -61,7 +61,7 @@ export default function FramedImage({
       {caption && (
         <figcaption className="absolute bottom-0 left-0 right-0 flex items-center justify-between gap-4 p-5 md:p-6">
           <span className="label-industrial text-xs md:text-sm">{caption}</span>
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/50">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-ivory/50">
             PP—TR
           </span>
         </figcaption>

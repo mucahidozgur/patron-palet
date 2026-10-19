@@ -91,7 +91,7 @@ export default function IntroGate({ children }: { children: ReactNode }) {
           >
             <div className="tech-grid absolute inset-0 opacity-60" />
             <div className="grain absolute inset-0 opacity-[0.14]" />
-            <div className="glow-pulse pointer-events-none absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-tan/10 blur-[120px]" />
+            <div className="glow-pulse pointer-events-none absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-moss/10 blur-[120px]" />
           </m.div>
 
           {/* Logo kilidi: header logosunun 2 katı (uçuşta ölçeklenir) */}
@@ -118,17 +118,17 @@ export default function IntroGate({ children }: { children: ReactNode }) {
                 width={88}
                 height={88}
                 priority
-                className="h-[88px] w-[88px] rounded-lg ring-1 ring-tan/50 shadow-[0_0_44px_rgba(212,163,115,0.4)]"
+                className="h-[88px] w-[88px] rounded-lg ring-1 ring-tan/50 shadow-[0_0_44px_rgba(123,200,159,0.4)]"
               />
               <div className="flex flex-col gap-6 text-[40px]">
                 <div className="flex items-center gap-6">
                   <span className="tr-badge">TR</span>
-                  <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display font-bold leading-none tracking-[0.2em] text-transparent drop-shadow-[0_0_24px_rgba(212,163,115,0.45)]">
+                  <span className="logo-shimmer bg-gradient-to-r from-tan via-moss to-tan bg-clip-text font-display font-bold leading-none tracking-[0.2em] text-transparent drop-shadow-[0_0_24px_rgba(123,200,159,0.45)]">
                     PATRON PALET
                   </span>
                 </div>
                 <m.span
-                  className="font-mono text-[22px] uppercase tracking-[0.3em] text-white/45"
+                  className="font-mono text-[22px] uppercase tracking-[0.3em] text-ivory/45"
                   animate={{ opacity: fly ? 0 : 1 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -141,7 +141,7 @@ export default function IntroGate({ children }: { children: ReactNode }) {
           {/* 3 saniyelik dolum hattı */}
           <div className="pointer-events-none absolute inset-x-0 bottom-24 flex justify-center">
             <m.span
-              className="h-px w-56 bg-gradient-to-r from-transparent via-tan to-transparent"
+              className="h-px w-56 bg-gradient-to-r from-transparent via-moss to-transparent"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1, opacity: fly ? 0 : 1 }}
               transition={{

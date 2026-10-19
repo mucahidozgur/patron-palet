@@ -62,7 +62,7 @@ export default function Header() {
         transition={{ duration: 0.4, ease: "easeOut" }}
         className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
           scrolled
-            ? "border-b border-tan/10 bg-ink/90 backdrop-blur-lg"
+            ? "border-b border-moss/10 bg-ink/90 backdrop-blur-lg"
             : "bg-transparent"
         }`}
       >
@@ -77,10 +77,10 @@ export default function Header() {
               className="rounded-md ring-1 ring-tan/40 transition-all duration-500 group-hover:scale-110 group-hover:ring-tan"
             />
             <span className="flex items-center gap-3 text-lg md:text-xl">
-              <span className="tr-badge shrink-0 transition-all duration-500 group-hover:bg-tan group-hover:text-ink">
+              <span className="tr-badge shrink-0 transition-all duration-500 group-hover:bg-moss group-hover:text-ink">
                 TR
               </span>
-              <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(212,163,115,0.45)] transition-all duration-500 group-hover:tracking-[0.28em]">
+              <span className="logo-shimmer bg-gradient-to-r from-tan via-moss to-tan bg-clip-text font-display font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(123,200,159,0.45)] transition-all duration-500 group-hover:tracking-[0.28em]">
                 PATRON PALET
               </span>
             </span>
@@ -92,7 +92,7 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="link-sweep text-sm uppercase tracking-widest text-white/80 transition-colors duration-300 hover:text-tan"
+                className="link-sweep text-sm uppercase tracking-widest text-ivory/80 transition-colors duration-300 hover:text-moss"
               >
                 {item.label}
               </a>
@@ -103,7 +103,7 @@ export default function Header() {
             {/* Teklif CTA */}
             <a
               href="#iletisim"
-              className="btn-sheen hidden border border-tan/40 px-6 py-2.5 text-xs font-bold uppercase tracking-widest2 text-tan transition-all duration-300 hover:bg-tan hover:text-ink hover:shadow-[0_0_24px_rgba(212,163,115,0.4)] md:inline-flex"
+              className="btn-sheen hidden border border-moss/40 px-6 py-2.5 text-xs font-bold uppercase tracking-widest2 text-moss transition-all duration-300 hover:bg-moss hover:text-ink hover:shadow-[0_0_24px_rgba(123,200,159,0.4)] md:inline-flex"
             >
               Teklif Al
             </a>
@@ -134,7 +134,7 @@ export default function Header() {
         <m.span
           aria-hidden
           style={{ scaleX: progress }}
-          className="absolute bottom-0 left-0 right-0 h-[2px] origin-left bg-gradient-to-r from-tan via-caramel to-tan"
+          className="absolute bottom-0 left-0 right-0 h-[2px] origin-left bg-gradient-to-r from-forest via-moss to-forest"
         />
       </m.header>
 
@@ -163,9 +163,9 @@ export default function Header() {
                     delay: 0.08 * i,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="heading-display text-4xl text-white"
+                  className="heading-display text-4xl text-ivory"
                 >
-                  <span className="mr-4 font-mono text-sm text-tan">
+                  <span className="mr-4 font-mono text-sm text-moss">
                     0{i + 1}
                   </span>
                   {item.label}
@@ -176,9 +176,9 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="relative mt-16 flex flex-col gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-white/50"
+              className="relative mt-16 flex flex-col gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-ivory/50"
             >
-              <a href="tel:+905434329951" className="text-tan">
+              <a href="tel:+905434329951" className="text-moss">
                 +90 (543) 432 99 51
               </a>
               <span>ISPM 15 SERTİFİKALI</span>

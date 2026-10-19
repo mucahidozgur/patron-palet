@@ -33,7 +33,7 @@ export default function Faq() {
           <p className="label-industrial mb-6">
             <span className="section-num mr-3">04</span>Sık Sorulan Sorular
           </p>
-          <h2 className="heading-display text-3xl text-white md:text-5xl">
+          <h2 className="heading-display text-3xl text-forest md:text-5xl">
             Merak Edilenler
           </h2>
         </Reveal>
@@ -41,17 +41,17 @@ export default function Faq() {
         <div className="space-y-4">
           {FAQS.map((faq, index) => (
             <Reveal key={faq.q} delay={index * 0.06}>
-              <details className="group border border-white/10 bg-ink transition-colors duration-300 hover:border-tan/30">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 p-6 font-medium text-white transition-colors duration-300 group-open:text-tan">
+              <details className="group border border-ivory/10 bg-ink transition-colors duration-300 hover:border-moss/30">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 p-6 font-medium text-ivory transition-colors duration-300 group-open:text-moss">
                   {faq.q}
                   <span
                     aria-hidden
-                    className="text-tan transition-transform duration-300 group-open:rotate-45"
+                    className="text-moss transition-transform duration-300 group-open:rotate-45"
                   >
                     +
                   </span>
                 </summary>
-                <p className="border-t border-white/5 p-6 pt-5 text-sm font-light leading-relaxed text-white/60">
+                <p className="border-t border-ivory/5 p-6 pt-5 text-sm font-light leading-relaxed text-ivory/60">
                   {faq.a}
                 </p>
               </details>

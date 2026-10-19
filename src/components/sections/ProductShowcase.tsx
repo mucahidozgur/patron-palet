@@ -95,16 +95,16 @@ export default function ProductShowcase() {
                       </div>
 
                       {/* Üst satır: numara + İNCELE */}
-                      <span className="absolute left-5 top-5 font-mono text-xs text-white/60">
+                      <span className="absolute left-5 top-5 font-mono text-xs text-ivory/60">
                         0{i + 1}
                       </span>
-                      <span className="absolute right-5 top-5 flex items-center gap-2 font-mono text-[0.65rem] tracking-[0.2em] text-white opacity-0 transition-all duration-500 group-hover:opacity-100">
+                      <span className="absolute right-5 top-5 flex items-center gap-2 font-mono text-[0.65rem] tracking-[0.2em] text-ivory opacity-0 transition-all duration-500 group-hover:opacity-100">
                         İNCELE <span aria-hidden>→</span>
                       </span>
 
                       {/* Alt satır: başlık + kategori */}
                       <span className="absolute inset-x-5 bottom-5 block">
-                        <span className="block font-display text-xl font-bold uppercase tracking-tight text-white transition-transform duration-500 group-hover:-translate-y-1 md:text-2xl">
+                        <span className="block font-display text-xl font-bold uppercase tracking-tight text-ivory transition-transform duration-500 group-hover:-translate-y-1 md:text-2xl">
                           {product.title}
                         </span>
                         <span
@@ -163,14 +163,14 @@ export default function ProductShowcase() {
                 aria-hidden
                 className="absolute inset-0 bg-gradient-to-t from-void/70 via-void/10 to-transparent"
               />
-              <span className="absolute left-5 top-5 font-mono text-xs text-white/70">
+              <span className="absolute left-5 top-5 font-mono text-xs text-ivory/70">
                 FIG. 01 — SAHA
               </span>
               <figcaption className="absolute inset-x-5 bottom-5 flex flex-wrap items-end justify-between gap-4">
                 <span className="font-display text-lg font-bold uppercase tracking-tight text-pure md:text-2xl">
                   Stok Sahası — Ankara
                 </span>
-                <span className="font-mono text-[0.65rem] tracking-[0.2em] text-white/70">
+                <span className="font-mono text-[0.65rem] tracking-[0.2em] text-ivory/70">
                   39.85° N — 32.64° E
                 </span>
               </figcaption>
