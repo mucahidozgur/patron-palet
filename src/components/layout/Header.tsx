@@ -62,7 +62,7 @@ export default function Header() {
         transition={{ duration: 0.4, ease: "easeOut" }}
         className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
           scrolled
-            ? "border-b border-moss/10 bg-ink/90 backdrop-blur-lg"
+            ? "border-b border-moss/25 bg-ink/90 backdrop-blur-lg"
             : "bg-transparent"
         }`}
       >
@@ -74,13 +74,13 @@ export default function Header() {
               alt="TR Patron Palet"
               width={44}
               height={44}
-              className="rounded-md ring-1 ring-tan/40 transition-all duration-500 group-hover:scale-110 group-hover:ring-tan"
+              className="rounded-full ring-1 ring-tan/60 transition-all duration-500 group-hover:scale-110 group-hover:ring-tan"
             />
             <span className="flex items-center gap-3 text-lg md:text-xl">
               <span className="tr-badge shrink-0 transition-all duration-500 group-hover:bg-moss group-hover:text-ink">
                 TR
               </span>
-              <span className="logo-shimmer bg-gradient-to-r from-tan via-moss to-tan bg-clip-text font-display font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(123,200,159,0.45)] transition-all duration-500 group-hover:tracking-[0.28em]">
+              <span className="logo-shimmer bg-gradient-to-r from-tan via-moss to-tan bg-clip-text font-display font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(223,168,108,0.55)] transition-all duration-500 group-hover:tracking-[0.28em]">
                 PATRON PALET
               </span>
             </span>
@@ -103,7 +103,7 @@ export default function Header() {
             {/* Teklif CTA */}
             <a
               href="#iletisim"
-              className="btn-sheen hidden border border-moss/40 px-6 py-2.5 text-xs font-bold uppercase tracking-widest2 text-moss transition-all duration-300 hover:bg-moss hover:text-ink hover:shadow-[0_0_24px_rgba(123,200,159,0.4)] md:inline-flex"
+              className="btn-sheen hidden border border-moss/40 px-6 py-2.5 text-xs font-bold uppercase tracking-widest2 text-moss transition-all duration-300 hover:bg-moss hover:text-ink hover:shadow-[0_0_24px_rgba(99,217,156,0.4)] md:inline-flex"
             >
               Teklif Al
             </a>

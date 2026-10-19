@@ -27,7 +27,7 @@ export default function ProductGrid() {
           <p className="label-industrial mb-6">
             <span className="section-num mr-3">01</span>Ürün Kataloğu
           </p>
-          <h2 className="heading-display text-3xl text-forest md:text-5xl">
+          <h2 className="heading-display text-3xl text-forest drop-shadow-[0_0_18px_rgba(99,217,156,0.35)] md:text-5xl">
             Ürünlerimiz
           </h2>
           <p className="mt-6 font-light leading-relaxed text-ivory/60">
@@ -59,7 +59,7 @@ export default function ProductGrid() {
                       setSelected(product);
                     }
                   }}
-                  className="group relative flex h-full min-h-[260px] cursor-pointer flex-col justify-end overflow-hidden border border-ivory/10 bg-panel transition-all duration-500 hover:border-moss/50 hover:shadow-[0_18px_60px_-18px_rgba(123,200,159,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-tan/50 lg:min-h-[320px]"
+                  className="group relative flex h-full min-h-[260px] cursor-pointer flex-col justify-end overflow-hidden border border-ivory/10 bg-panel transition-all duration-500 hover:border-moss/50 hover:shadow-[0_18px_60px_-18px_rgba(99,217,156,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-tan/50 lg:min-h-[320px]"
                 >
                   {/* Fotoğraf — kartın yıldızı */}
                   {product.image && (
@@ -141,10 +141,10 @@ export default function ProductGrid() {
           <Reveal delay={0.16} className="h-full">
             <div className="relative flex h-full min-h-[260px] flex-col justify-between overflow-hidden border border-ivory/10 bg-surface p-7 lg:min-h-[320px]">
               <div className="tech-grid absolute inset-0 opacity-70" aria-hidden />
-              <div className="glow-pulse pointer-events-none absolute -top-10 left-1/2 h-[200px] w-[300px] -translate-x-1/2 rounded-full bg-moss/10 blur-[80px]" />
+              <div className="glow-pulse pointer-events-none absolute -top-10 left-1/2 h-[200px] w-[300px] -translate-x-1/2 rounded-full bg-moss/20 blur-[80px]" />
               <span className="relative font-mono text-xs text-moss/60">09</span>
               <div className="relative">
-                <p className="heading-display text-4xl text-forest drop-shadow-[0_0_24px_rgba(123,200,159,0.35)] md:text-5xl">
+                <p className="heading-display text-4xl text-forest drop-shadow-[0_0_24px_rgba(99,217,156,0.5)] md:text-5xl">
                   ISPM 15
                 </p>
                 <p className="mt-3 font-mono text-[0.65rem] uppercase tracking-[0.25em] text-ivory/60">
@@ -161,10 +161,10 @@ export default function ProductGrid() {
           <Reveal delay={0.24} className="h-full">
             <a
               href="#iletisim"
-              className="group relative flex h-full min-h-[260px] flex-col justify-between overflow-hidden border border-moss/40 bg-panel p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_60px_-18px_rgba(123,200,159,0.4)] lg:min-h-[320px]"
+              className="group relative flex h-full min-h-[260px] flex-col justify-between overflow-hidden border border-tan/50 bg-panel p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_60px_-18px_rgba(223,168,108,0.45)] lg:min-h-[320px]"
             >
               <div className="tech-grid absolute inset-0 opacity-60" aria-hidden />
-              <span className="relative font-mono text-xs text-moss/70">10</span>
+              <span className="relative font-mono text-xs text-tan/70">10</span>
               <div className="relative">
                 <span className="heading-display block text-2xl text-ivory md:text-3xl">
                   Aradığınız ölçü yok mu?
@@ -175,7 +175,7 @@ export default function ProductGrid() {
               </div>
               <span
                 aria-hidden
-                className="absolute bottom-6 right-6 text-2xl text-moss transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                className="absolute bottom-6 right-6 text-2xl text-tan transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
               >
                 →
               </span>

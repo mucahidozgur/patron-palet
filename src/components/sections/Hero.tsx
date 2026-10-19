@@ -40,7 +40,7 @@ export default function Hero() {
   const spotlight = useTransform(
     [sx, sy],
     ([x, y]: number[]) =>
-      `radial-gradient(520px circle at ${x}px ${y}px, rgba(123,200,159,0.13), transparent 70%)`
+      `radial-gradient(520px circle at ${x}px ${y}px, rgba(99,217,156,0.13), transparent 70%)`
   );
 
   return (
@@ -85,7 +85,7 @@ export default function Hero() {
       {/* İkinci ışık nabzı — sağ altta yosun parıltısı */}
       <div
         aria-hidden
-        className="glow-pulse pointer-events-none absolute -bottom-24 -right-24 h-[380px] w-[380px] rounded-full bg-forest/20 blur-[110px]"
+        className="glow-pulse pointer-events-none absolute -bottom-24 -right-24 h-[380px] w-[380px] rounded-full bg-forest/30 blur-[110px]"
         style={{ animationDelay: "1.5s" }}
       />
 
@@ -132,14 +132,14 @@ export default function Hero() {
           variants={wordContainer}
           initial="hidden"
           animate={introDone ? "visible" : "hidden"}
-          className="heading-display text-4xl leading-[1.1] text-forest md:text-6xl lg:text-7xl"
+          className="heading-display text-4xl leading-[1.1] text-forest drop-shadow-[0_0_22px_rgba(99,217,156,0.35)] md:text-6xl lg:text-7xl"
         >
           <m.span variants={wordFadeUp} className="inline-block">
             Patron
           </m.span>{" "}
           <m.span
             variants={wordFadeUp}
-            className="logo-shimmer inline-block bg-gradient-to-r from-tan to-moss bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(123,200,159,0.4)]"
+            className="logo-shimmer inline-block bg-gradient-to-r from-tan to-moss bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(223,168,108,0.6)]"
           >
             Palet
           </m.span>
@@ -164,7 +164,7 @@ export default function Hero() {
         >
           <a
             href="#iletisim"
-            className="btn-sheen bg-ivory px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-moss hover:shadow-[0_0_32px_rgba(123,200,159,0.5)]"
+            className="btn-sheen bg-ivory px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-moss hover:shadow-[0_0_32px_rgba(99,217,156,0.5)]"
           >
             Teklif Al <span className="ml-1">→</span>
           </a>
@@ -205,8 +205,8 @@ export default function Hero() {
           <span className="font-mono text-[9px] uppercase tracking-[0.4em] text-ivory/40">
             Kaydır
           </span>
-          <span className="flex h-10 w-6 items-start justify-center rounded-full border border-moss/40 p-1.5">
-            <span className="scroll-dot h-1.5 w-1.5 rounded-full bg-moss" />
+          <span className="flex h-10 w-6 items-start justify-center rounded-full border border-tan/60 p-1.5">
+            <span className="scroll-dot h-1.5 w-1.5 rounded-full bg-tan" />
           </span>
         </m.div>
       </div>

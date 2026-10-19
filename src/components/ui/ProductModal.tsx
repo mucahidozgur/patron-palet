@@ -76,7 +76,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.12, ease: EASE_EXPO }}
-          className="w-full max-w-3xl overflow-hidden border border-moss/20 bg-surface shadow-[0_0_60px_-16px_rgba(123,200,159,0.3)]"
+          className="w-full max-w-3xl overflow-hidden border border-moss/20 bg-surface shadow-[0_0_60px_-16px_rgba(99,217,156,0.3)]"
         >
           {/* Görsel banner */}
           {product.image && (
@@ -146,7 +146,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
               <a
                 href="#iletisim"
                 onClick={onClose}
-                className="btn-sheen bg-ivory px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-moss hover:shadow-[0_0_32px_rgba(123,200,159,0.5)]"
+                className="btn-sheen bg-ivory px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-moss hover:shadow-[0_0_32px_rgba(99,217,156,0.5)]"
               >
                 Teklif Al →
               </a>

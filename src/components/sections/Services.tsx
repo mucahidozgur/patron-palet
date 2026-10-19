@@ -40,7 +40,7 @@ export default function Services() {
           <p className="label-industrial mb-6">
             <span className="section-num mr-3">02</span>Hizmetlerimiz
           </p>
-          <h2 className="heading-display text-3xl text-forest md:text-5xl">
+          <h2 className="heading-display text-3xl text-forest drop-shadow-[0_0_18px_rgba(99,217,156,0.35)] md:text-5xl">
             Tek Çatı Altında
           </h2>
           <p className="mt-6 font-light leading-relaxed text-ivory/60">
@@ -52,7 +52,7 @@ export default function Services() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map((service, index) => (
             <Reveal key={service.title} delay={index * 0.08}>
-              <article className="group h-full border border-ivory/10 bg-ink p-8 transition-all duration-300 hover:-translate-y-1 hover:border-moss/40 hover:shadow-[0_14px_44px_-12px_rgba(123,200,159,0.3)]">
+              <article className="group h-full border border-ivory/10 bg-ink p-8 transition-all duration-300 hover:-translate-y-1 hover:border-moss/40 hover:shadow-[0_14px_44px_-12px_rgba(99,217,156,0.3)]">
                 <div className="flex items-start justify-between">
                   <svg
                     viewBox="0 0 24 24"
@@ -61,7 +61,7 @@ export default function Services() {
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-10 w-10 text-moss drop-shadow-[0_0_10px_rgba(123,200,159,0.5)] transition-transform duration-300 group-hover:scale-110"
+                    className="h-10 w-10 text-moss drop-shadow-[0_0_10px_rgba(99,217,156,0.5)] transition-transform duration-300 group-hover:scale-110"
                     aria-hidden="true"
                   >
                     {service.icon}

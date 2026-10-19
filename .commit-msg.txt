@@ -1,0 +1,14 @@
+Doygun renkler, dairesel intro logosu, guclu efektler
+
+- Kahverengi vurgulandi: sicak kahve-siyah zemin (#14100b),
+  parlak ahsap tan (#dfa86c), logo/wordmark pariltilari kahve
+- Yesil doygunlasti: forest #35a06b, canli moss #63d99c —
+  transparan gorunum giderildi (opacity'ler yukseltildi)
+- Intro: logo DAİRE icinde — donen kesikli halka + ahsap pariltisi,
+  3 sn sonra sol ustteki dairesel header logosuna ucar
+- Basliklara yesil parilti (drop-shadow) eklendi
+- Reveal gecislerine derinlik: hafif olcek buyumesi (0.97 -> 1)
+- Marquee dolgun renklere gecti: ahsap/yosun donusumlu
+- Scroll hapi ahsap rengine, CTA hucresi ahsap cerceveye
+
+Co-Authored-By: Claude Code <noreply@anthropic.com>

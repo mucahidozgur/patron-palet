@@ -53,7 +53,7 @@ export default function StatsBand() {
                   : "group"
               }
             >
-              <p className="font-display text-4xl font-extrabold text-forest drop-shadow-[0_0_24px_rgba(123,200,159,0.25)] transition-transform duration-300 group-hover:scale-105 md:text-5xl">
+              <p className="font-display text-4xl font-extrabold text-forest drop-shadow-[0_0_24px_rgba(99,217,156,0.45)] transition-transform duration-300 group-hover:scale-105 md:text-5xl">
                 <Counter to={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
               </p>
               <p className="label-industrial mt-3 text-sm">{stat.label}</p>

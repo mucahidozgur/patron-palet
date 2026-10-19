@@ -33,7 +33,7 @@ export default function Faq() {
           <p className="label-industrial mb-6">
             <span className="section-num mr-3">04</span>Sık Sorulan Sorular
           </p>
-          <h2 className="heading-display text-3xl text-forest md:text-5xl">
+          <h2 className="heading-display text-3xl text-forest drop-shadow-[0_0_18px_rgba(99,217,156,0.35)] md:text-5xl">
             Merak Edilenler
           </h2>
         </Reveal>

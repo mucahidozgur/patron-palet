@@ -22,12 +22,12 @@ export default function CtaBand() {
       <div className="container-editorial relative">
         <Reveal>
           <div className="tech-grid relative overflow-hidden border border-moss/25 bg-ink/55 p-10 text-center backdrop-blur-sm md:p-20">
-            <div className="glow-pulse pointer-events-none absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-moss/10 blur-[100px]" />
+            <div className="glow-pulse pointer-events-none absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-moss/20 blur-[100px]" />
 
             <p className="label-industrial relative mb-6">
               <span className="section-num mr-3">05</span>İletişim
             </p>
-            <h2 className="heading-display relative text-3xl text-forest md:text-5xl">
+            <h2 className="heading-display relative text-3xl text-forest drop-shadow-[0_0_18px_rgba(99,217,156,0.35)] md:text-5xl">
               Projeniz İçin Teklif Alın
             </h2>
             <p className="relative mx-auto mt-6 max-w-xl font-light leading-relaxed text-ivory/65">
@@ -39,13 +39,13 @@ export default function CtaBand() {
             <div className="relative mt-12 flex flex-wrap items-center justify-center gap-6">
               <a
                 href="tel:+905434329951"
-                className="btn-sheen bg-ivory px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-moss hover:shadow-[0_0_32px_rgba(123,200,159,0.5)]"
+                className="btn-sheen bg-ivory px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-moss hover:shadow-[0_0_32px_rgba(99,217,156,0.5)]"
               >
                 +90 (543) 432 99 51
               </a>
               <a
                 href="mailto:info@patronpalet.com"
-                className="btn-sheen border border-moss/40 px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-moss transition-all duration-300 hover:bg-moss hover:text-ink hover:shadow-[0_0_24px_rgba(123,200,159,0.4)]"
+                className="btn-sheen border border-moss/40 px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-moss transition-all duration-300 hover:bg-moss hover:text-ink hover:shadow-[0_0_24px_rgba(99,217,156,0.4)]"
               >
                 E-posta Gönder
               </a>

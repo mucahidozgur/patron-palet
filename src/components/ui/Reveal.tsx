@@ -27,6 +27,7 @@ interface RevealProps {
 
 /**
  * Tekrar kullanılabilir scroll-reveal sarmalayıcı.
+ * Hafif ölçek büyümesiyle (0.97 → 1) derinlikli geçiş verir.
  * Yalnızca transform + opacity canlandırır (GPU dostu).
  * MotionConfig reducedMotion="user" sayesinde hareket azaltma
  * tercihinde otomatik olarak yalnızca fade'e düşer.
@@ -40,7 +41,8 @@ export default function Reveal({
   once = true,
   ready,
 }: RevealProps) {
-  const initial = { opacity: 0, ...OFFSETS[direction] };
+  const initial = { opacity: 0, scale: 0.97, ...OFFSETS[direction] };
+  const target = { opacity: 1, x: 0, y: 0, scale: 1 };
   const transition = { duration, delay, ease: EASE_EXPO };
 
   // Dış tetikleyici modu: intro gibi olaylar bitene kadar gizli kalır
@@ -49,7 +51,7 @@ export default function Reveal({
       <m.div
         className={className}
         initial={initial}
-        animate={ready ? { opacity: 1, x: 0, y: 0 } : initial}
+        animate={ready ? target : initial}
         transition={transition}
       >
         {children}
@@ -61,7 +63,7 @@ export default function Reveal({
     <m.div
       className={className}
       initial={initial}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      whileInView={target}
       viewport={once ? VIEWPORT_ONCE : { margin: "-80px" }}
       transition={transition}
     >

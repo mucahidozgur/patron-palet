@@ -91,7 +91,12 @@ export default function IntroGate({ children }: { children: ReactNode }) {
           >
             <div className="tech-grid absolute inset-0 opacity-60" />
             <div className="grain absolute inset-0 opacity-[0.14]" />
-            <div className="glow-pulse pointer-events-none absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-moss/10 blur-[120px]" />
+            {/* Çift ışık nabzı: yosun + ahşap */}
+            <div className="glow-pulse pointer-events-none absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-moss/20 blur-[120px]" />
+            <div
+              className="glow-pulse pointer-events-none absolute left-[32%] top-[60%] h-[340px] w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-tan/15 blur-[100px]"
+              style={{ animationDelay: "1.5s" }}
+            />
           </m.div>
 
           {/* Logo kilidi: header logosunun 2 katı (uçuşta ölçeklenir) */}
@@ -112,18 +117,29 @@ export default function IntroGate({ children }: { children: ReactNode }) {
                   : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
               }
             >
-              <Image
-                src="/logopatron.jpeg"
-                alt="TR Patron Palet"
-                width={88}
-                height={88}
-                priority
-                className="h-[88px] w-[88px] rounded-lg ring-1 ring-tan/50 shadow-[0_0_44px_rgba(123,200,159,0.4)]"
-              />
+              {/* Dairesel logo: dönen kesikli halka + ahşap parıltı */}
+              <span className="relative block h-[88px] w-[88px] shrink-0">
+                <span
+                  aria-hidden
+                  className="animate-spin-slow absolute -inset-2 rounded-full border border-dashed border-tan/70"
+                />
+                <span
+                  aria-hidden
+                  className="glow-pulse absolute inset-0 rounded-full bg-tan/20 blur-lg"
+                />
+                <Image
+                  src="/logopatron.jpeg"
+                  alt="TR Patron Palet"
+                  width={88}
+                  height={88}
+                  priority
+                  className="relative h-full w-full rounded-full object-cover ring-2 ring-tan/60 shadow-[0_0_44px_rgba(223,168,108,0.55)]"
+                />
+              </span>
               <div className="flex flex-col gap-6 text-[40px]">
                 <div className="flex items-center gap-6">
                   <span className="tr-badge">TR</span>
-                  <span className="logo-shimmer bg-gradient-to-r from-tan via-moss to-tan bg-clip-text font-display font-bold leading-none tracking-[0.2em] text-transparent drop-shadow-[0_0_24px_rgba(123,200,159,0.45)]">
+                  <span className="logo-shimmer bg-gradient-to-r from-tan via-moss to-tan bg-clip-text font-display font-bold leading-none tracking-[0.2em] text-transparent drop-shadow-[0_0_24px_rgba(223,168,108,0.55)]">
                     PATRON PALET
                   </span>
                 </div>
