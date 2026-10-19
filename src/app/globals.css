@@ -284,6 +284,13 @@ body {
   transform-origin: left;
 }
 
+/* Bronz dış hatlı dev tipografi — bölüm filigranları */
+.text-outline-tan {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(212, 163, 115, 0.2);
+  paint-order: stroke fill;
+}
+
 /* ── Hareket azaltma (prefers-reduced-motion) ─────────── */
 @media (prefers-reduced-motion: reduce) {
   html {

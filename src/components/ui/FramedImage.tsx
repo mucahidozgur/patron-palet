@@ -1,4 +1,9 @@
+"use client";
+
+import * as m from "motion/react-m";
+import { useReducedMotion } from "motion/react";
 import Image from "next/image";
+import { EASE_EXPO } from "@/lib/motion";
 
 type Props = {
   src: string;
@@ -13,7 +18,7 @@ type Props = {
 
 /**
  * Bronz köşe braketli, grenli ve alt yazılı görsel çerçevesi.
- * Hover'da görsel yumuşakça yakınlaşır (CSS, JS gerektirmez).
+ * Ekrana girerken yumuşak oturma zoom'u, hover'da ek zoom (CSS).
  */
 export default function FramedImage({
   src,
@@ -24,11 +29,19 @@ export default function FramedImage({
   sizes = "(min-width: 1024px) 50vw, 100vw",
   position,
 }: Props) {
+  const reduce = useReducedMotion();
+
   return (
     <figure
       className={`group relative overflow-hidden border bg-panel ${className}`}
     >
-      <div className="absolute inset-0 overflow-hidden">
+      <m.div
+        initial={reduce ? undefined : { scale: 1.1 }}
+        whileInView={reduce ? undefined : { scale: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 1.4, ease: EASE_EXPO }}
+        className="absolute inset-0 overflow-hidden"
+      >
         <Image
           src={src}
           alt={alt}
@@ -37,7 +50,7 @@ export default function FramedImage({
           sizes={sizes}
           className={`object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${position ?? ""}`}
         />
-      </div>
+      </m.div>
 
       <div className="grain pointer-events-none absolute inset-0 opacity-15 mix-blend-overlay" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-transparent to-ink/15" />

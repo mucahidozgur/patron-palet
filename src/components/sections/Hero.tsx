@@ -53,25 +53,31 @@ export default function Hero() {
         }
       }}
     >
-      {/* Görsel katmanı: gorsel5 — yumuşak oturma zoom'u */}
+      {/* Görsel katmanı: gorsel5 — yumuşak oturma zoom'u + sinematik drift */}
       <m.div
         initial={reduce ? undefined : { scale: 1.1 }}
         animate={reduce ? undefined : introDone ? { scale: 1 } : { scale: 1.1 }}
         transition={{ duration: 2.2, ease: EASE_EXPO }}
         className="absolute inset-0"
       >
-        <Image
-          src="/images/site/hero-bg.jpg"
-          alt="Ahşap palet yığını"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[68%_center]"
-        />
+        <m.div
+          animate={reduce ? undefined : { scale: [1, 1.07, 1] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="/images/site/hero-bg.jpg"
+            alt="Ahşap palet yığını"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[68%_center]"
+          />
+        </m.div>
       </m.div>
 
       {/* Okunabilirlik katmanları */}
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-ink/15" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-transparent to-ink" />
       <div className="tech-grid absolute inset-0 opacity-40" />
       <div className="grain absolute inset-0 opacity-[0.12] mix-blend-overlay" />

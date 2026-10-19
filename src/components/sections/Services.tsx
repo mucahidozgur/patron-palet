@@ -44,8 +44,8 @@ export default function Services() {
             Tek Çatı Altında
           </h2>
           <p className="mt-6 font-light leading-relaxed text-white/60">
-            Müşteri beklentileri doğrultusunda özel ve standart üretim — tüm
-            ahşap palet ihtiyaçlarınız için tek adres.
+            Üretimden alım satıma, ihracattan özel ölçüye — tüm ahşap palet
+            ihtiyaçlarınız için tek adres.
           </p>
         </Reveal>
 

@@ -72,8 +72,20 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-white/5 pt-8 text-center text-sm text-white/50">
-          © 2026 Patron Palet. Tüm hakları saklıdır.
+        {/* Dev bronz filigran — kapanış imzası */}
+        <div
+          aria-hidden
+          className="select-none overflow-hidden border-t border-tan/10"
+        >
+          <p className="heading-display translate-y-[18%] text-center text-[15vw] leading-[0.75] text-outline-tan">
+            PATRON
+          </p>
+        </div>
+
+        <div className="border-t border-tan/10">
+          <div className="container-editorial py-6 text-center text-sm text-white/50">
+            © 2026 Patron Palet. Tüm hakları saklıdır.
+          </div>
         </div>
       </div>
     </footer>

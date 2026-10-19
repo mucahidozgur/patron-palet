@@ -1,0 +1,12 @@
+Vitrin yenilendi — gorsel mozaik, sinematik efektler, bronz filigranlar
+
+- Urun katalogu: goruntu oncelikli mozaik (vitrin karti + fotografli kartlar)
+- Kartlarda hover zoom, bronz kose braketleri, isik supurmesi
+- ISPM 15 guven hucresi + ozel uretim CTA hucresi
+- FramedImage: ekrana girerken yumusak oturma zoom'u
+- Hero: sinematik sonsuz drift + daha gorunur arka plan
+- Bolum metinleri tazelendi (daha iddiali, net)
+- Footer'a dev bronz PATRON filigrani, vitrine PALET filigrani
+- Showcase bandi buyutuldu
+
+Co-Authored-By: Claude Code <noreply@anthropic.com>
