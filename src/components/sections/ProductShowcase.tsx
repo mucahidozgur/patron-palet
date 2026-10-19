@@ -183,7 +183,6 @@ export default function ProductShowcase() {
         {selected && (
           <ProductModal
             product={selected}
-            index={products.findIndex((p) => p.id === selected.id)}
             onClose={() => setSelected(null)}
           />
         )}

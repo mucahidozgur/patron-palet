@@ -13,9 +13,9 @@ import {
 } from "react";
 
 /**
- * Açılış animasyonu — logo ekranın ortasında belirir, 3 saniye kalır,
+ * Açılış sahnesi — logo ekranın ortasında belirir, 3 saniye kalır,
  * ardından header'daki yerine (sol üst) uçarak oturur.
- * Hero içeriği intro bitene kadar bekler (useIntroDone).
+ * Hero ve Header, intro bitene kadar bekler (useIntroDone).
  */
 const IntroContext = createContext(true);
 
@@ -24,7 +24,7 @@ export const useIntroDone = () => useContext(IntroContext);
 /** Logo ortada kalma süresi (ms) */
 const HOLD_MS = 3000;
 /** Merkez → sol üst uçuş süresi (ms) */
-const FLY_MS = 800;
+const FLIGHT_MS = 850;
 
 interface FlyTarget {
   x: number;
@@ -66,7 +66,7 @@ export default function IntroGate({ children }: { children: ReactNode }) {
         setFly({ x: 0, y: 0, scale: 1 });
       }
     }, HOLD_MS);
-    const doneTimer = setTimeout(() => setDone(true), HOLD_MS + FLY_MS + 200);
+    const doneTimer = setTimeout(() => setDone(true), HOLD_MS + FLIGHT_MS + 160);
     return () => {
       clearTimeout(flyTimer);
       clearTimeout(doneTimer);
@@ -80,85 +80,80 @@ export default function IntroGate({ children }: { children: ReactNode }) {
       {!done && (
         <div
           aria-hidden
-          className="fixed inset-0 z-[100]"
+          className="fixed inset-0 z-[100] bg-ink"
           style={{ pointerEvents: fly ? "none" : "auto" }}
         >
-          {/* Zemin + elektrik parıltısı — uçuş sırasında çözülür */}
+          {/* Sahne dokusu — uçuş sırasında çözülür */}
           <m.div
             className="absolute inset-0"
-            animate={fly ? { opacity: 0 } : { opacity: 1 }}
-            transition={
-              fly
-                ? { duration: 0.45, delay: 0.35, ease: "easeInOut" }
-                : { duration: 0 }
-            }
+            animate={{ opacity: fly ? 0 : 1 }}
+            transition={{ duration: FLIGHT_MS / 1000, ease: "easeInOut" }}
           >
-            <div className="absolute inset-0 bg-void" />
-            <div className="absolute inset-0 bg-[radial-gradient(42%_34%_at_50%_50%,#FF3D0018_0%,transparent_70%)]" />
+            <div className="tech-grid absolute inset-0 opacity-60" />
+            <div className="grain absolute inset-0 opacity-[0.14]" />
+            <div className="glow-pulse pointer-events-none absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-tan/10 blur-[120px]" />
           </m.div>
 
-          {/* Logo — merkezde doğar, header logosunun üstüne konar */}
+          {/* Logo kilidi: header logosunun 2 katı (uçuşta ölçeklenir) */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="scale-[1.35] sm:scale-[1.7]">
-              <m.div
-                ref={flyRef}
-                className="flex items-center gap-3"
-                style={{ transformOrigin: fly ? "top left" : "center" }}
-                initial={{ opacity: 0, y: 16, scale: 0.94 }}
-                animate={
-                  fly
-                    ? { x: fly.x, y: fly.y, scale: fly.scale, opacity: 1 }
-                    : { opacity: 1, y: 0, scale: 1 }
-                }
-                transition={
-                  fly
-                    ? { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
-                    : { duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }
-                }
-              >
-                {/* Header logosu ile birebir aynı yapı — kusursuz morph */}
-                <span className="flex h-10 w-10 items-center justify-center border border-pure/15 bg-ash/50 p-1.5">
-                  <Image
-                    src="/logopatron-alpha.png"
-                    alt="TR Patron Palet"
-                    width={40}
-                    height={40}
-                    className="h-full w-full object-contain"
-                  />
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="border border-electric/70 bg-electric/10 px-1.5 py-0.5 font-display text-[0.7rem] font-bold tracking-[0.25em] text-electric">
-                    TR
-                  </span>
-                  <span className="hidden font-display text-sm font-bold tracking-[0.3em] text-pure sm:block">
+            <m.div
+              ref={flyRef}
+              className="flex items-center gap-6"
+              style={{ transformOrigin: fly ? "top left" : "center" }}
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={
+                fly
+                  ? { x: fly.x, y: fly.y, scale: fly.scale, opacity: 1 }
+                  : { opacity: 1, scale: 1 }
+              }
+              transition={
+                fly
+                  ? { duration: FLIGHT_MS / 1000, ease: [0.65, 0, 0.35, 1] }
+                  : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+              }
+            >
+              <Image
+                src="/logopatron.jpeg"
+                alt="TR Patron Palet"
+                width={88}
+                height={88}
+                priority
+                className="h-[88px] w-[88px] rounded-lg ring-1 ring-tan/50 shadow-[0_0_44px_rgba(212,163,115,0.4)]"
+              />
+              <div className="flex flex-col gap-6 text-[40px]">
+                <div className="flex items-center gap-6">
+                  <span className="tr-badge">TR</span>
+                  <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display font-bold leading-none tracking-[0.2em] text-transparent drop-shadow-[0_0_24px_rgba(212,163,115,0.45)]">
                     PATRON PALET
                   </span>
-                </span>
-              </m.div>
-            </div>
+                </div>
+                <m.span
+                  className="font-mono text-[22px] uppercase tracking-[0.3em] text-white/45"
+                  animate={{ opacity: fly ? 0 : 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Ahşap Palet Üretimi — MMXXVI
+                </m.span>
+              </div>
+            </m.div>
           </div>
 
-          {/* Alt satır: ilerleme çizgisi + konum — zeminle birlikte kaybolur */}
-          <m.div
-            className="absolute inset-x-0 bottom-12 flex flex-col items-center gap-4"
-            initial={{ opacity: 0 }}
-            animate={fly ? { opacity: 0 } : { opacity: 1 }}
-            transition={
-              fly
-                ? { duration: 0.3, ease: "easeInOut" }
-                : { duration: 0.5, delay: 0.5 }
-            }
-          >
+          {/* 3 saniyelik dolum hattı */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-24 flex justify-center">
             <m.span
-              className="h-px w-44 origin-left bg-electric/70"
+              className="h-px w-56 bg-gradient-to-r from-transparent via-tan to-transparent"
               initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 2.5, delay: 0.2, ease: "linear" }}
+              animate={{ scaleX: 1, opacity: fly ? 0 : 1 }}
+              transition={{
+                scaleX: {
+                  duration: (HOLD_MS - 200) / 1000,
+                  delay: 0.2,
+                  ease: "easeInOut",
+                },
+                opacity: { duration: 0.3 },
+              }}
             />
-            <span className="font-mono text-[0.6rem] uppercase tracking-[0.3em] text-smoke">
-              ANKARA — TÜRKİYE GENELİ
-            </span>
-          </m.div>
+          </div>
         </div>
       )}
     </IntroContext.Provider>

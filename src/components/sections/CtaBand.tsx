@@ -1,75 +1,58 @@
 "use client";
 
 import Image from "next/image";
-import Magnetic from "@/components/ui/Magnetic";
 import Reveal from "@/components/ui/Reveal";
 
-/** Footer öncesi tam genişlik CTA bandı — electric zemin üzerinde saha dokusu. */
+/** İletişim bölümü — gorsel6 zemini üzerinde bronz çerçeveli panel. */
 export default function CtaBand() {
   return (
-    <section className="relative overflow-hidden bg-electric text-void">
-      {/* Saha fotoğrafı — electric zeminle çoğalır (multiply) */}
-      <div aria-hidden className="absolute inset-0">
-        <Image
-          src="/images/site/saha-4.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover opacity-60 mix-blend-multiply"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-electric/85 via-electric/40 to-electric/85" />
-      </div>
+    <section id="iletisim" className="relative overflow-hidden py-32 md:py-40">
+      {/* Görsel katmanı: gorsel6 */}
+      <Image
+        src="/images/site/saha-4.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-ink/88" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/60 to-ink" />
+      <div className="grain absolute inset-0 opacity-10" />
 
-      <div className="container-industrial relative py-24 md:py-32">
+      <div className="container-editorial relative">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-void/70">
-            TEKLİF — 24 SAAT İÇİNDE DÖNÜŞ
-          </p>
-        </Reveal>
-        <Reveal delay={0.08}>
-          <h2 className="heading-display mt-4 max-w-4xl text-5xl md:text-7xl lg:text-8xl">
-            BİRLİKTE
-            <br />
-            ÇALIŞALIM
-          </h2>
-        </Reveal>
-        <Reveal delay={0.16} className="mt-8 max-w-xl">
-          <p className="text-base leading-relaxed text-void/80 md:text-lg">
-            İhtiyacınızı anlatın; ölçü, adet ve teslimat planını birlikte
-            çıkaralım. Ankara&apos;dan tüm Türkiye&apos;ye.
-          </p>
-        </Reveal>
-        <Reveal delay={0.24} className="mt-12 flex flex-wrap items-center gap-6">
-          <Magnetic strength={0.3}>
-            <a
-              href="#iletisim"
-              className="group block bg-void px-10 py-5 font-mono text-sm uppercase tracking-[0.2em] text-pure transition-colors duration-300 hover:bg-pure hover:text-void"
-            >
-              TEKLİF AL
-              <span
-                aria-hidden
-                className="ml-3 inline-block transition-transform duration-300 group-hover:translate-x-1"
+          <div className="tech-grid relative overflow-hidden border border-tan/25 bg-ink/55 p-10 text-center backdrop-blur-sm md:p-20">
+            <div className="glow-pulse pointer-events-none absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-tan/10 blur-[100px]" />
+
+            <p className="label-industrial relative mb-6">
+              <span className="section-num mr-3">05</span>İletişim
+            </p>
+            <h2 className="heading-display relative text-3xl text-white md:text-5xl">
+              Projeniz İçin Teklif Alın
+            </h2>
+            <p className="relative mx-auto mt-6 max-w-xl font-light leading-relaxed text-white/65">
+              En uygun, en doğru ve en ekonomik çözümler için bizimle iletişime
+              geçin. Ankara&apos;dan Türkiye&apos;ye ve tüm dünyaya hizmet
+              veriyoruz.
+            </p>
+
+            <div className="relative mt-12 flex flex-wrap items-center justify-center gap-6">
+              <a
+                href="tel:+905434329951"
+                className="btn-sheen bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-caramel hover:shadow-[0_0_32px_rgba(212,163,115,0.5)]"
               >
-                →
-              </span>
-            </a>
-          </Magnetic>
-          <a
-            href="tel:+905434329951"
-            className="font-mono text-sm tracking-[0.15em] text-void underline-offset-4 transition-colors hover:underline"
-          >
-            +90 (543) 432 99 51
-          </a>
+                +90 (543) 432 99 51
+              </a>
+              <a
+                href="mailto:info@patronpalet.com"
+                className="btn-sheen border border-tan/40 px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-tan transition-all duration-300 hover:bg-tan hover:text-ink hover:shadow-[0_0_24px_rgba(212,163,115,0.4)]"
+              >
+                E-posta Gönder
+              </a>
+            </div>
+          </div>
         </Reveal>
       </div>
-
-      {/* Dev dış hatlı filigran — bandın imzası */}
-      <span
-        aria-hidden
-        className="heading-display pointer-events-none absolute -bottom-[3%] left-1/2 -translate-x-1/2 select-none whitespace-nowrap text-[10vw] leading-none text-void/10"
-      >
-        TR PATRON PALET
-      </span>
     </section>
   );
 }

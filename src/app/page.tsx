@@ -1,13 +1,14 @@
 import BackToTop from "@/components/ui/BackToTop";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import About from "@/components/sections/About";
-import CtaBand from "@/components/sections/CtaBand";
 import Hero from "@/components/sections/Hero";
-import Marquee from "@/components/sections/Marquee";
-import Process from "@/components/sections/Process";
-import ProductShowcase from "@/components/sections/ProductShowcase";
-import Testimonials from "@/components/sections/Testimonials";
+import StatsBand from "@/components/sections/StatsBand";
+import ProductGrid from "@/components/sections/ProductGrid";
+import ShowcaseBand from "@/components/sections/ShowcaseBand";
+import Services from "@/components/sections/Services";
+import About from "@/components/sections/About";
+import Faq from "@/components/sections/Faq";
+import CtaBand from "@/components/sections/CtaBand";
 
 export default function Home() {
   return (
@@ -15,11 +16,12 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Process />
-        <Marquee />
-        <ProductShowcase />
+        <StatsBand />
+        <ProductGrid />
+        <ShowcaseBand />
+        <Services />
         <About />
-        <Testimonials />
+        <Faq />
         <CtaBand />
       </main>
       <Footer />

@@ -25,7 +25,7 @@ export default function BackToTop() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 16 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="group fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center border border-electric/40 bg-void/90 text-electric backdrop-blur-sm transition-colors duration-300 hover:border-electric hover:bg-electric hover:text-void md:bottom-8 md:right-8"
+          className="group fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center border border-tan/40 bg-ink/90 text-tan backdrop-blur-sm transition-colors duration-300 hover:border-tan hover:bg-tan hover:text-ink md:bottom-8 md:right-8"
         >
           <span
             aria-hidden

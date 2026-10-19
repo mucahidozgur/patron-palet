@@ -1,126 +1,79 @@
-import Image from "next/image";
-
 const LINKS = [
-  { label: "ÜRÜNLER", href: "#urunler" },
-  { label: "ÜRETİM", href: "#uretim" },
-  { label: "HAKKINDA", href: "#hakkimizda" },
-  { label: "REFERANSLAR", href: "#referanslar" },
-  { label: "İLETİŞİM", href: "#iletisim" },
+  { label: "Ürünler", href: "#urunler" },
+  { label: "Hizmetler", href: "#hizmetler" },
+  { label: "Hakkımızda", href: "#hakkimizda" },
+  { label: "Sık Sorulan Sorular", href: "#sss" },
 ];
 
 export default function Footer() {
   return (
-    <footer
-      id="iletisim"
-      className="relative overflow-hidden border-t border-electric/20 bg-void"
-    >
-      <div className="container-industrial py-16 md:py-20">
-        <div className="grid gap-12 md:grid-cols-3 md:gap-8">
+    <footer className="border-t border-tan/10 bg-ink">
+      <div className="container-editorial py-16">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Logo + tagline */}
           <div>
-            <a href="#top" className="group flex items-center gap-3">
-              <span className="flex h-12 w-12 items-center justify-center border border-pure/15 bg-ash/50 p-2 transition-colors duration-300 group-hover:border-electric/60">
-                <Image
-                  src="/logopatron-alpha.png"
-                  alt="TR Patron Palet"
-                  width={48}
-                  height={48}
-                  className="h-full w-full object-contain"
-                />
+            <span className="flex items-center gap-3 text-lg md:text-xl">
+              <span className="tr-badge shrink-0">TR</span>
+              <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(212,163,115,0.45)]">
+                PATRON PALET
               </span>
-              <span className="flex items-center gap-2">
-                <span className="border border-electric/70 bg-electric/10 px-2 py-1 font-display text-xs font-bold tracking-[0.25em] text-electric">
-                  TR
-                </span>
-                <span className="font-display text-base font-bold tracking-[0.3em]">
-                  PATRON PALET
-                </span>
-              </span>
-            </a>
-            <p className="mt-6 max-w-xs text-base leading-relaxed text-smoke">
-              Ahşabın ham gücü, mühendisliğin hassasiyeti. Lisanslı üretim,
-              zamanında teslim.
+            </span>
+            <p className="mt-4 max-w-xs text-base font-light text-white/60">
+              Sıfır ahşap palet üretimi, ikinci el palet alım satımı ve ihracat
+              sandığı imalatı.
             </p>
           </div>
 
           {/* Hızlı linkler */}
-          <nav aria-label="Hızlı linkler">
-            <p className="label-tech text-sm">HIZLI LİNKLER</p>
-            <ul className="mt-6 space-y-4">
+          <div>
+            <p className="label-industrial mb-6 text-sm">Hızlı Linkler</p>
+            <ul className="space-y-3 text-base text-white/70">
               {LINKS.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="font-mono text-sm uppercase tracking-[0.2em] text-pure/80 transition-colors duration-300 hover:text-electric"
+                    className="transition-colors duration-300 hover:text-tan"
                   >
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
-          </nav>
+          </div>
 
           {/* İletişim */}
           <div>
-            <p className="label-tech text-sm">İLETİŞİM</p>
-            <address className="mt-6 space-y-4 not-italic">
-              <p className="text-base leading-relaxed text-smoke">
-                <span className="block font-mono text-xs uppercase tracking-[0.2em] text-pure/60">
-                  MERKEZ
-                </span>
-                <span className="mt-1 block">
-                  Saray Mah. Adnan Menderes Bulvarı 10. Cadde No: 7,
-                  Kahramankazan / ANKARA
-                </span>
-              </p>
-              <p className="text-base leading-relaxed text-smoke">
-                <span className="block font-mono text-xs uppercase tracking-[0.2em] text-pure/60">
-                  ŞUBE
-                </span>
-                <span className="mt-1 block">
-                  İvedik Mah. İvedik Küme Evleri No: 38/8, Yenimahalle / ANKARA
-                </span>
-              </p>
-              <p className="text-base text-pure">
+            <p className="label-industrial mb-6 text-sm">İletişim</p>
+            <ul className="space-y-3 text-base text-white/70">
+              <li>
                 <a
                   href="tel:+905434329951"
-                  className="transition-colors duration-300 hover:text-electric"
+                  className="transition-colors duration-300 hover:text-tan"
                 >
                   +90 (543) 432 99 51
                 </a>
-                <span className="ml-3 font-mono text-sm text-smoke">
-                  09:00 — 17:00
-                </span>
-              </p>
-              <p className="text-base text-pure">
+              </li>
+              <li>
                 <a
                   href="mailto:info@tepeahsappalet.com"
-                  className="transition-colors duration-300 hover:text-electric"
+                  className="transition-colors duration-300 hover:text-tan"
                 >
                   info@tepeahsappalet.com
                 </a>
-              </p>
-            </address>
+              </li>
+              <li className="pt-2 text-sm font-light leading-relaxed text-white/50">
+                Saray Mah. Adnan Menderes Bulvarı 10. Cadde No: 7,
+                Kahramankazan / ANKARA
+              </li>
+              <li className="text-sm font-light leading-relaxed text-white/50">
+                İvedik Mah. İvedik Küme Evleri No: 38/8, Yenimahalle / ANKARA
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Dev filigran — Flux tarzı kapanış imzası */}
-      <div
-        aria-hidden
-        className="select-none overflow-hidden border-t border-pure/10"
-      >
-        <p className="heading-display translate-y-[18%] text-center text-[15vw] leading-[0.75] text-pure/[0.045]">
-          PATRON
-        </p>
-      </div>
-
-      <div className="border-t border-pure/10">
-        <div className="container-industrial flex flex-col justify-between gap-3 py-6 md:flex-row md:items-center">
-          <p className="font-mono text-sm text-smoke">
-            © 2025 Patron Palet. Tüm hakları saklıdır.
-          </p>
-          <p className="font-mono text-sm text-smoke">MMXXV — ANKARA</p>
+        <div className="mt-16 border-t border-white/5 pt-8 text-center text-sm text-white/50">
+          © 2026 Patron Palet. Tüm hakları saklıdır.
         </div>
       </div>
     </footer>

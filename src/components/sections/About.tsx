@@ -1,150 +1,84 @@
 "use client";
 
-import * as m from "motion/react-m";
-import { useReducedMotion, useScroll, useTransform } from "motion/react";
-import Image from "next/image";
-import { useRef } from "react";
 import Reveal from "@/components/ui/Reveal";
+import FramedImage from "@/components/ui/FramedImage";
 
-const REASONS = [
-  {
-    num: "01",
-    title: "Garantili & Kaliteli",
-    desc: "Her palet, teslimattan önce kalite kontrolünden geçer.",
-  },
-  {
-    num: "02",
-    title: "Zamanında Teslim",
-    desc: "Söz verdiğimiz gün, söz verdiğimiz saatte kapınızda.",
-  },
-  {
-    num: "03",
-    title: "Müşteri Odaklı Üretim",
-    desc: "Standart ya da özel ölçü; ihtiyacınıza göre üretiriz.",
-  },
+const VALUES = [
+  "Garantili — Kaliteli Hizmet",
+  "Kaliteli Ürün — Müşteri Odaklı Çözümler",
+  "Zamanında İş — Ürün Teslimi",
 ];
 
 export default function About() {
-  const ref = useRef<HTMLElement>(null);
-  const reduce = useReducedMotion();
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  // Fotoğraf, scroll ile ters yönde süzülür
-  const photoY = useTransform(scrollYProgress, [0, 1], [60, -60]);
-
   return (
-    <section ref={ref} id="hakkimizda" className="relative overflow-hidden bg-void py-32">
-      {/* Bölüm indeksi */}
-      <span
-        aria-hidden
-        className="heading-display text-outline pointer-events-none absolute right-6 top-10 select-none text-[18vw] leading-none opacity-15 lg:right-12"
-      >
-        03
-      </span>
+    <section id="hakkimizda" className="bg-ink py-32 md:py-40">
+      <div className="container-editorial">
+        <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
+          <Reveal>
+            <p className="label-industrial mb-6">
+              <span className="section-num mr-3">03</span>Hakkımızda
+            </p>
+            <h2 className="heading-display text-3xl text-white md:text-5xl">
+              Yılların Tecrübesi,
+              <span className="logo-shimmer block bg-gradient-to-r from-tan to-caramel bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(212,163,115,0.35)]">
+                Aynı Kalite
+              </span>
+            </h2>
+            <p className="mt-8 font-light leading-relaxed text-white/60">
+              Alanında uzman, deneyimli kadromuz ile yılların vermiş olduğu
+              tecrübe ve birikim sayesinde, müşterilerimize her zaman aynı
+              kalitede hizmet vermek için çalışmaktayız.
+            </p>
+            <p className="mt-6 font-light leading-relaxed text-white/60">
+              Müşteri beklentileri doğrultusunda özel ve standart palet üretimi
+              yaparak tüm isteklerinizi karşılamaktayız. Tüm ahşap palet ürün ve
+              hizmetlerimizde garanti ve kalite ile her zaman yanınızdayız.
+            </p>
+          </Reveal>
 
-      <div className="container-industrial relative">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-          {/* Sol: metin */}
-          <div>
-            <Reveal>
-              <p className="label-tech">HAKKIMIZDA</p>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <h2 className="heading-display mt-4 text-4xl md:text-6xl lg:text-7xl">
-                PALET
-                <br />
-                BİZİM İŞİMİZ<span className="text-electric">.</span>
-              </h2>
-            </Reveal>
-            <Reveal delay={0.16} className="mt-8 max-w-xl space-y-5">
-              <p className="text-sm leading-relaxed text-smoke md:text-base">
-                Kuruluşumuzdan bu yana alanında deneyimli kadromuz, modern
-                altyapımız ve kaliteli ürün üretim politikamızla hizmet
-                veriyoruz. Türkiye&apos;nin birçok şehrindeki yerli ve yabancı
-                müşterilerimize, dünya standartlarına uygun lisanslı ahşap
-                palet üretimiyle, zamanında ve güvenli teslimat anlayışıyla
-                çalışıyoruz.
-              </p>
-              <p className="text-sm leading-relaxed text-smoke md:text-base">
-                İkinci el palet, sıfıra göre çok daha uygun maliyetlidir;
-                garantimiz altında, kullanımda sorun yaşamazsınız.
-              </p>
-            </Reveal>
-
-            {/* NEDEN BİZ — numaralı liste */}
-            <div className="mt-12 border-t border-pure/10">
-              {REASONS.map((reason, i) => (
-                <Reveal
-                  key={reason.num}
-                  direction="left"
-                  delay={i * 0.1}
-                  className="group flex items-baseline gap-6 border-b border-pure/10 py-6 transition-colors duration-300 hover:bg-ash/40"
-                >
-                  <span className="font-mono text-sm text-electric">
-                    {reason.num}
-                  </span>
-                  <div>
-                    <h3 className="font-display text-lg font-bold uppercase tracking-tight transition-transform duration-300 group-hover:translate-x-2 md:text-xl">
-                      {reason.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-smoke">{reason.desc}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-
-          {/* Sağ: paralaks fotoğraf */}
-          <Reveal direction="right" className="relative">
-            <div className="relative overflow-hidden border border-pure/15">
-              <m.div style={reduce ? undefined : { y: photoY }} className="relative aspect-[4/5] w-full">
-                <Image
-                  src="/images/about.jpg"
-                  alt="Palet üretim ve depolama alanı"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-                {/* Karartma + çerçeve detayları */}
-                <div className="absolute inset-0 bg-gradient-to-t from-void/70 via-transparent to-void/20" />
-                <span className="absolute left-5 top-5 font-mono text-xs text-white/70">
-                  ÜRETİM SAHASI — ANKARA
-                </span>
-                <span className="absolute bottom-5 right-5 font-mono text-xs text-white/70">
-                  39.85° N — 32.64° E
-                </span>
-              </m.div>
-              {/* Electric köşe aksanı */}
-              <span
-                aria-hidden
-                className="absolute -bottom-3 -left-3 h-16 w-16 border-b-2 border-l-2 border-electric"
-              />
-              <span
-                aria-hidden
-                className="absolute -right-3 -top-3 h-16 w-16 border-r-2 border-t-2 border-electric"
-              />
-            </div>
-            {/* Üst üste binen detay fotoğrafı — kolaj derinliği */}
-            <div className="absolute -bottom-10 -right-10 hidden w-52 overflow-hidden border border-pure/15 bg-void shadow-[0_24px_80px_rgba(0,0,0,0.6)] md:block lg:w-64">
-              <div className="relative aspect-[3/2]">
-                <Image
-                  src="/images/site/detay-1.jpg"
-                  alt=""
-                  fill
-                  sizes="320px"
-                  className="object-cover"
-                />
-                <div aria-hidden className="absolute inset-0 bg-void/20" />
-                <span className="absolute bottom-3 left-4 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-white/80">
-                  DETAY — 03
-                </span>
-              </div>
-            </div>
+          {/* Görsel kolajı: gorsel1 + gorsel4 */}
+          <Reveal delay={0.15} className="relative">
+            <FramedImage
+              src="/images/site/saha-1.jpg"
+              alt="İstiflenmiş ahşap paletler"
+              caption="Sıfır Palet Üretim Hattı"
+              className="aspect-[4/3] w-full"
+            />
+            <FramedImage
+              src="/images/site/saha-3.jpg"
+              alt="Sevkiyata hazır palet yığını"
+              caption="Sevkiyata Hazır"
+              className="absolute -bottom-14 -left-4 hidden aspect-[16/10] w-1/2 border-4 border-ink shadow-[0_24px_60px_-20px_rgba(0,0,0,0.8)] sm:block md:-left-10"
+            />
           </Reveal>
         </div>
+
+        {/* Değerler */}
+        <Reveal delay={0.1} className="mt-28 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {VALUES.map((value, index) => (
+            <div
+              key={value}
+              className="group flex items-center gap-5 border border-white/10 bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.25)]"
+            >
+              <span className="font-mono text-xs text-tan/60">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-6 w-6 shrink-0 text-tan drop-shadow-[0_0_8px_rgba(212,163,115,0.5)] transition-transform duration-300 group-hover:scale-110"
+                aria-hidden="true"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              <span className="text-base font-medium text-white">{value}</span>
+            </div>
+          ))}
+        </Reveal>
       </div>
     </section>
   );
